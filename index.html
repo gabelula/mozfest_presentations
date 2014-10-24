@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>¿Qué son exactamente los datos geograficos?</title>
+
+		<meta name="description" content="Mapas, datos geograficos, herramientas">
+		<meta name="author" content="Gabriela Rodríguez">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Datos geograficos</h1>
+					<h3>datos para dibujar mapas</h3>
+					<p>
+						<small>Por <a href="http://gaba.stayover.org">Gabriela Rodríguez</a> / <a href="http://twitter.com/gaba">@gaba</a></small>
+					</p>
+					<p>
+						<small>Knight-Mozilla Open News Fellow at La Nacion, Argentina</small>
+					</p>
+					<aside class="notes">
+						programadora de Open News en La Nacion
+						gracias noah veltman, brian jacobs por la inspiración
+						vamos a hacer una charla basica sobre mapas
+					</aside>
+				</section>
+
+				<section>
+					<h2>¿Qué son datos geograficos?</h2>
+					<h3>lista de datos con ubicación gegrafica</h3>
+
+					<ul>
+						<li>+1 - resultados de elecciones, como se voto en tu escuela?</li>
+						<li>+1 - por donde hay contaminación, por ejemplo "contaminación en el riachuelo" http://quepasariachuelo.org.ar/</li>
+						<li>-1 - </li>
+					</ul>
+
+					<aside class="notes">
+						Dirección, algo que ubique donde esta sucediendo algo, datos que se puedan dibujar para delimitar un territorio
+						No todos los datos geograficos deberian ser visualizados en mapas. Aveces hay datos que al visualizarlos en un mapa pueden llevar a confundir en vez de aclarar y que realmente requieren otro tipo de visualización.
+
+						Cuando no usar un mapa para visualizar datos geograficos:
+
+						1. cuando los patrones interesantes no son geograficos
+						2. cuando los datos geograficos son mas efectivos para analizar
+
+					</aside>
+				</section>
+
+				<section>
+					<section>
+						<h2>Mapas</h2>
+						<h3></h3>
+						<p>
+							Los mapas consisten de datos geograficos y un sistema para representarlos visualmente.
+						</p>
+						<aside class="notes"></aside>
+					</section>
+
+					<section>
+						<h2>The Guardian</h2>
+						<h3>MP's expenses</h3>
+						<p><a href="http://www.theguardian.com/news/datablog/2009/jun/18/mps-expenses-houseofcommons">Data collection in 2009</a> from four years of expenses and claims from scanned PDFs.</p>
+						<aside class="notes">
+							the House of Commons has released thousands of MPs' receipts - 700,000 individual documents contained within 5,500 PDF files covering all 646 members of parliament.
+							They opened up this data to as many people as possible. They asked for help analysing it and find the great stories buried within the photocopied handwritten receipts.
+
+Using their system the people were able to find their MP - or any member, for that matter - and look at their records directly. For every page for every MP the community was able to:
+
+• comment on individual expenses
+• highlight ones of interest
+• tell them how interesting that receipt is
+• Help by entering the numbers on the page
+						</aside>
+					</section>
+					<section>
+						<h2>Pro-Publica</h2>
+						<h3>free the files</h3>
+						<p>Reveal outside spending in the 2012 US elections from political ad filings from television stations in swing markets.</p>
+						<aside class="notes">
+							In the US, TV stations mantain a political file of political ad requests and contracts. It means they log who is requesting or contract advertisement for political campaigns. Pro-publica got the files from 4 TV stations.
+
+Their goal was to increase transparency around these filings by sorting and annotating them with key data, making it easier to identify the groups buying these political ads.
+
+						Crowdata is quite similar to 'free the files' but with the added bonus of being configurable for multiple projects by the journalists that don't code.
+						</aside>
+					</section>
+					<section>
+						<h2>Other features we needed</h2>
+						<ul>
+							<li>reusable code without needing custom code for each project</li>
+							<li>a ranking for the users on amount of documents checked</li>
+							<li>a way to search in the same project (To Do)</li>
+						</ul>
+						<aside class="notes">
+							The data that needs to be extracted have to be configured by the journalist and not a programmer.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>CrowData</h2>
+					<p>Code at <a href="http://github.com/crowdata/crowdata">http://github.com/crowdata/crowdata</a></p>
+				  <p>Vozdata at <a href="http://vozdata.lanacion.com.ar">http://vozdata.lanacion.com.ar</a></p>
+				</section>
+
+				<section>
+					<section>
+						<h2>CrowData</h2>
+						<h3>how to use it</h3>
+					</section>
+
+					<section>
+						<h2>Django</h2>
+						<h3>administration features</h3>
+						<ul>
+							<li>Create projects and upload documents</li>
+							<li>For each project, configure the fields that needs to be extracted</li>
+							<li>Download data</li>
+						</ul>
+						<aside class="notes">
+							Used github for the development
+							Download and install as any django application
+							Run locally
+							We we used postgresql (trigram search)
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Development</h2>
+					<p>
+						In the newsroom, with journalists at La Nacion Data.
+					</p>
+					<p>
+						<a href="http://www.github.com/crowdata">http://www.github.com/crowdata</a>
+					</p>
+				</section>
+
+				<section>
+					<h2>Media Party - August 27th to 30th - Buenos Aires, Argentina</h2>
+					<p>
+						Come join us!
+					</p>
+					<p>
+						<a href="http://www.mediaparty.info">http://www.mediaparty.info</a>
+					</p>
+				</section>
+
+				<section>
+					<h2>Questions & Comments</h2>
+					<p>
+					</p>
+					<blockquote cite="http://en.wikipedia.org/wiki/No_such_thing_as_a_stupid_question">
+						&ldquo;There are naive questions, tedious questions, ill-phrased questions, questions put after inadequate self-criticism. But every question is a cry to understand the world. There is no such thing as a dumb question.&rdquo;
+					</blockquote>
+				</section>
+
+				<section>
+					<h1>THE END</h1>
+					<h3>BY Gabriela Rodríguez / gaba.stayover.org</h3>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
